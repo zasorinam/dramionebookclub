@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Отпечаток волшебства · штампы и книжный мерч</title>
+<meta name="description" content="Авторские именные штампы-экслибрисы для тех, кто любит свои книги. Ручная работа. Каждая печать находит своего волшебника.">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="animations.css">
+<style>
+:root {
+  --pink-shock: #E91E84;
+  --pink-bright: #F04A9E;
+  --pink-soft: #F8C8DC;
+  --pink-blush: #FCE0EC;
+  --pink-cream: #FFF4F8;
+  --magenta: #C32B6E;
+  --magenta-deep: #9A1F4C;
+  --burgundy: #5C1832;
+  --cream: #FBE9D5;
+  --cream-warm: #F5DCC4;
+  --gold-glow: #F4C770;
+  --ink: #2A1018;
+  --shadow: rgba(154, 31, 76, 0.18);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--pink-blush);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(233, 30, 132, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(195, 43, 110, 0.1) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.76 0 0 0 0 0.16 0 0 0 0 0.43 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+img { display: block; max-width: 100%; }
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  background: rgba(252, 224, 236, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(195, 43, 110, 0.15);
+}
+
+.nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--burgundy);
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-mark svg { width: 100%; height: 100%; }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--burgundy);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--magenta);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--magenta); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  padding: 10px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.nav-cta:hover {
+  background: var(--pink-shock);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(244, 199, 112, 0.25) 0%, transparent 65%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: 'Caveat', cursive;
+  color: var(--magenta);
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: fadeUp 1s ease;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 50px;
+  height: 1.5px;
+  background: var(--magenta);
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+  font-weight: 400;
+  line-height: 0.98;
+  color: var(--burgundy);
+  letter-spacing: -0.025em;
+  margin-bottom: 30px;
+  animation: fadeUp 1s ease 0.1s backwards;
+}
+
+h1 em {
+  font-style: italic;
+  color: var(--magenta);
+  font-weight: 300;
+  position: relative;
+  display: inline-block;
+}
+
+h1 em::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: -4px;
+  right: -4px;
+  height: 12px;
+  background: var(--pink-soft);
+  z-index: -1;
+  opacity: 0.85;
+  transform: skew(-3deg);
+}
+
+.hero-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.22rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 38px;
+  max-width: 540px;
+  animation: fadeUp 1s ease 0.2s backwards;
+}
+
+.hero-text strong {
+  color: var(--magenta-deep);
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  animation: fadeUp 1s ease 0.3s backwards;
+}
+
+.btn-primary {
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  padding: 17px 38px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  box-shadow: 0 6px 24px rgba(154, 31, 76, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.btn-primary:hover {
+  background: var(--pink-shock);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(154, 31, 76, 0.35);
+}
+
+.btn-secondary {
+  color: var(--magenta-deep);
+  padding: 17px 38px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  border: 1.5px solid var(--magenta);
+  transition: all 0.3s;
+  background: transparent;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.btn-secondary:hover {
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  transform: translateY(-2px);
+}
+
+.hero-visual {
+  position: relative;
+  height: 580px;
+  animation: fadeUp 1.2s ease 0.4s backwards;
+}
+
+.hero-photo-frame {
+  position: absolute;
+  inset: 0;
+  background: var(--pink-bright);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 
+    0 40px 80px rgba(195, 43, 110, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero-photo-frame img,
+.hero-photo-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(154, 31, 76, 0.15) 0%, transparent 40%, rgba(195, 43, 110, 0.18) 100%);
+  pointer-events: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.deco-quote {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  color: var(--cream);
+  font-size: 1.4rem;
+  pointer-events: none;
+  letter-spacing: 0.02em;
+  z-index: 3;
+  text-shadow: 0 2px 8px rgba(92, 24, 50, 0.4);
+}
+
+/* SECTIONS */
+section {
+  padding: 110px 0;
+  position: relative;
+}
+
+.section-eyebrow {
+  font-family: 'Caveat', cursive;
+  color: var(--magenta);
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+}
+
+.section-eyebrow::before, .section-eyebrow::after {
+  content: '';
+  width: 50px;
+  height: 1.5px;
+  background: var(--magenta);
+}
+
+h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--burgundy);
+  margin-bottom: 24px;
+  letter-spacing: -0.018em;
+  line-height: 1.05;
+}
+
+h2 em {
+  font-style: italic;
+  color: var(--magenta);
+  font-weight: 300;
+}
+
+.section-intro {
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  font-size: 1.18rem;
+  color: var(--ink);
+  max-width: 660px;
+  margin: 0 auto 70px;
+  line-height: 1.75;
+  opacity: 0.88;
+}
+
+/* ABOUT */
+.about {
+  background: var(--cream);
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: 280px 280px 16px 16px;
+  box-shadow: 0 40px 80px rgba(154, 31, 76, 0.25);
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(154, 31, 76, 0.4) 100%);
+  pointer-events: none;
+}
+
+.about-image-caption {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Caveat', cursive;
+  color: #FFF4F8;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 80%;
+  letter-spacing: 0.01em;
+  z-index: 2;
+  text-shadow: 0 2px 12px rgba(92, 24, 50, 0.6);
+}
+
+.about-text p {
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 22px;
+  font-size: 1.18rem;
+  line-height: 1.75;
+}
+
+.about-text p:first-of-type::first-letter {
+  font-family: 'Fraunces', serif;
+  font-size: 4.2rem;
+  font-style: italic;
+  font-weight: 400;
+  float: left;
+  line-height: 0.9;
+  margin-right: 14px;
+  margin-top: 8px;
+  color: var(--magenta);
+}
+
+.signature {
+  font-family: 'Caveat', cursive;
+  font-size: 1.7rem;
+  color: var(--magenta);
+  margin-top: 32px;
+  letter-spacing: 0.01em;
+}
+
+/* WHAT-IS-WHAT explainer */
+.explainer {
+  background: var(--pink-blush);
+  padding: 90px 0;
+}
+
+.explainer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.explainer-image {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(154, 31, 76, 0.18);
+}
+
+.explainer-text .section-eyebrow {
+  justify-content: flex-start;
+}
+
+.explainer-text .section-eyebrow::after {
+  display: none;
+}
+
+.explainer-text h2 {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.explainer-text p {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.explainer-list {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.explainer-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(195, 43, 110, 0.15);
+  font-size: 1.08rem;
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+
+.explainer-list li:last-child { border-bottom: none; }
+
+.explainer-list li strong {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--magenta-deep);
+  font-weight: 600;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+/* SETS */
+.sets {
+  background: var(--cream);
+  position: relative;
+}
+
+.sets-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 30px;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.set-card {
+  background: var(--pink-cream);
+  border-radius: 24px;
+  padding: 0 0 36px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1.5px solid rgba(195, 43, 110, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.set-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 36px 70px rgba(154, 31, 76, 0.2);
+  border-color: rgba(195, 43, 110, 0.4);
+}
+
+.set-card.featured {
+  border-color: var(--magenta);
+  box-shadow: 0 12px 36px rgba(154, 31, 76, 0.12);
+}
+
+.set-card.featured::before {
+  content: '★ полный выбор ★';
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  padding: 5px 16px;
+  border-radius: 100px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  z-index: 3;
+}
+
+.set-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  position: relative;
+}
+
+.set-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.set-card:hover .set-photo img {
+  transform: scale(1.04);
+}
+
+.set-body {
+  padding: 30px 32px 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.set-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.95rem;
+  color: var(--burgundy);
+  margin-bottom: 8px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.set-tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: var(--magenta);
+  margin-bottom: 22px;
+}
+
+.set-price {
+  font-size: 2.6rem;
+  color: var(--magenta-deep);
+  margin-bottom: 28px;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.set-price small {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+.set-includes {
+  list-style: none;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.set-includes li {
+  padding: 11px 0;
+  border-bottom: 1px dashed rgba(195, 43, 110, 0.25);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.45;
+}
+
+.set-includes li::before {
+  content: '✦';
+  color: var(--magenta);
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 0.95rem;
+}
+
+.set-includes li:last-child { border-bottom: none; }
+
+.set-includes li strong {
+  color: var(--magenta-deep);
+  font-weight: 600;
+}
+
+.set-cta {
+  display: block;
+  text-align: center;
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  padding: 15px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.set-cta:hover {
+  background: var(--pink-shock);
+  transform: translateY(-1px);
+}
+
+.set-card.featured .set-cta {
+  background: var(--pink-shock);
+}
+
+.set-card.featured .set-cta:hover {
+  background: var(--magenta-deep);
+}
+
+.sets-note {
+  text-align: center;
+  margin-top: 38px;
+  font-family: 'Caveat', cursive;
+  color: var(--magenta);
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* WOODS — три породы */
+.woods {
+  background: var(--pink-blush);
+  padding: 100px 0;
+}
+
+.woods-card {
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-deep) 100%);
+  border-radius: 28px;
+  padding: 48px 56px;
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+  color: var(--pink-cream);
+  box-shadow: 0 30px 60px rgba(154, 31, 76, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.woods-card::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(244, 199, 112, 0.25) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.woods-text {
+  position: relative;
+  z-index: 2;
+}
+
+.woods-text h2 {
+  text-align: left;
+  color: var(--pink-cream);
+  margin-bottom: 24px;
+}
+
+.woods-text h2 em { color: var(--pink-soft); }
+
+.woods-text > p {
+  color: var(--pink-blush);
+  font-size: 1.13rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.woods-types {
+  list-style: none;
+  margin-top: 24px;
+}
+
+.woods-types li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(252, 224, 236, 0.18);
+  display: grid;
+  grid-template-columns: 130px 110px 1fr;
+  gap: 16px;
+  font-size: 1.04rem;
+  align-items: baseline;
+}
+
+.woods-types li:last-child { border-bottom: none; }
+
+.woods-types .name {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--pink-cream);
+}
+
+.woods-types .shade {
+  font-family: 'Caveat', cursive;
+  color: var(--pink-soft);
+  font-size: 1.15rem;
+}
+
+.woods-types .core {
+  color: var(--pink-blush);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.woods-image {
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 9 / 14;
+  background: var(--magenta-deep);
+}
+
+.woods-image img,
+.woods-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* PROCESS */
+.process {
+  background: var(--cream);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 50px;
+}
+
+.process-step {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.step-number {
+  font-family: 'Fraunces', serif;
+  font-size: 4.5rem;
+  font-style: italic;
+  color: var(--magenta);
+  line-height: 1;
+  margin-bottom: 18px;
+  display: block;
+  font-weight: 300;
+  position: relative;
+}
+
+.step-number::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--magenta);
+  opacity: 0.4;
+}
+
+.step-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--burgundy);
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.step-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.82;
+}
+
+/* FEATURES */
+.features {
+  background: var(--pink-blush);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 50px;
+}
+
+.feature {
+  padding: 36px 32px;
+  border-radius: 20px;
+  background: var(--pink-cream);
+  border: 1.5px solid rgba(195, 43, 110, 0.12);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.feature:hover {
+  border-color: var(--magenta);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(154, 31, 76, 0.12);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+  color: var(--magenta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  color: var(--burgundy);
+  margin-bottom: 14px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.feature-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.06rem;
+  line-height: 1.7;
+  opacity: 0.88;
+}
+
+.feature-photo {
+  margin: -36px -32px 22px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+}
+
+.feature-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.feature:hover .feature-photo img {
+  transform: scale(1.05);
+}
+
+/* GALLERY */
+.gallery {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.gallery-item {
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(154, 31, 76, 0.1);
+  transition: all 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(154, 31, 76, 0.18);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+  aspect-ratio: 1/2;
+}
+
+/* MERCH */
+.merch {
+  background: var(--pink-blush);
+  position: relative;
+}
+
+.merch-banner {
+  background: linear-gradient(135deg, var(--magenta) 0%, var(--magenta-deep) 100%);
+  border-radius: 28px;
+  padding: 0;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: stretch;
+  color: var(--pink-cream);
+  box-shadow: 0 30px 60px rgba(154, 31, 76, 0.25);
+}
+
+.merch-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(248, 200, 220, 0.3) 0%, transparent 70%);
+  filter: blur(30px);
+}
+
+.merch-banner-text {
+  padding: 48px 52px;
+  position: relative;
+  z-index: 2;
+}
+
+.merch-banner-eyebrow {
+  font-family: 'Caveat', cursive;
+  color: var(--pink-soft);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.merch-banner h3 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 14px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.merch-banner p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  opacity: 0.94;
+  margin-bottom: 18px;
+}
+
+.merch-banner-tag {
+  display: inline-block;
+  background: rgba(252, 224, 236, 0.15);
+  border: 1px solid rgba(248, 200, 220, 0.4);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--pink-cream);
+}
+
+.merch-banner-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.merch-banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.merch-card {
+  background: var(--pink-cream);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid rgba(195, 43, 110, 0.12);
+  transition: all 0.3s;
+}
+
+.merch-card:hover {
+  border-color: var(--magenta);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(154, 31, 76, 0.1);
+}
+
+.merch-card-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.merch-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.merch-card:hover .merch-card-photo img {
+  transform: scale(1.05);
+}
+
+.merch-card-body {
+  padding: 22px 24px 26px;
+}
+
+.merch-card-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--burgundy);
+  margin-bottom: 6px;
+}
+
+.merch-card-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  color: var(--ink);
+}
+
+.merch-cta {
+  text-align: center;
+  margin-top: 38px;
+}
+
+.merch-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--magenta-deep);
+  border: 1.5px solid var(--magenta);
+  padding: 14px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+}
+
+.merch-cta a:hover {
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  transform: translateY(-2px);
+}
+
+/* ARCHIVE */
+.archive {
+  background: var(--cream);
+  padding: 80px 0;
+}
+
+.archive-card {
+  background: linear-gradient(135deg, var(--pink-cream) 0%, var(--pink-blush) 100%);
+  border: 1.5px solid rgba(195, 43, 110, 0.2);
+  border-radius: 28px;
+  padding: 44px 48px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 36px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(244, 199, 112, 0.3) 0%, transparent 70%);
+  filter: blur(30px);
+}
+
+.archive-stamp {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.archive-text {
+  position: relative;
+  z-index: 2;
+}
+
+.archive-eyebrow {
+  font-family: 'Caveat', cursive;
+  color: var(--magenta);
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.archive-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--burgundy);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.archive-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.85;
+}
+
+.archive-link {
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  padding: 14px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  transition: all 0.3s;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.archive-link:hover {
+  background: var(--pink-shock);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(154, 31, 76, 0.3);
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: var(--magenta-deep);
+  color: var(--pink-cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(248, 200, 220, 0.15) 0%, transparent 60%);
+  filter: blur(60px);
+}
+
+.testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(244, 199, 112, 0.18) 0%, transparent 60%);
+  filter: blur(60px);
+}
+
+.testimonials .section-eyebrow { color: var(--pink-soft); }
+.testimonials .section-eyebrow::before,
+.testimonials .section-eyebrow::after { background: var(--pink-soft); }
+.testimonials h2 { color: var(--pink-cream); }
+.testimonials h2 em { color: var(--pink-soft); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial {
+  background: rgba(252, 224, 236, 0.08);
+  padding: 42px 38px;
+  border-radius: 20px;
+  border: 1px solid rgba(252, 224, 236, 0.15);
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.testimonial::before {
+  content: '"';
+  position: absolute;
+  top: -28px;
+  left: 28px;
+  font-family: 'Fraunces', serif;
+  font-size: 7rem;
+  color: var(--pink-bright);
+  line-height: 1;
+  font-style: italic;
+}
+
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 28px;
+  color: var(--pink-cream);
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-author {
+  font-family: 'Caveat', cursive;
+  color: var(--pink-soft);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-author::before {
+  content: '—';
+  color: var(--pink-bright);
+}
+
+/* FAQ */
+.faq {
+  background: var(--pink-blush);
+}
+
+.faq-list {
+  max-width: 780px;
+  margin: 50px auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(195, 43, 110, 0.2);
+  padding: 28px 0;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(195, 43, 110, 0.2);
+}
+
+.faq-question {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--burgundy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-style: italic;
+  font-weight: 500;
+  padding-right: 20px;
+  letter-spacing: -0.005em;
+}
+
+.faq-question::-webkit-details-marker { display: none; }
+
+.faq-question::after {
+  content: '+';
+  font-size: 2rem;
+  color: var(--magenta);
+  font-style: normal;
+  transition: transform 0.3s;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+details[open] .faq-question::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding-top: 18px;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--ink);
+  opacity: 0.88;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.faq-answer a {
+  color: var(--magenta-deep);
+  text-decoration: underline;
+  text-decoration-color: rgba(154, 31, 76, 0.4);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.faq-answer a:hover {
+  text-decoration-color: var(--magenta-deep);
+}
+
+/* FINAL CTA */
+.final-cta {
+  background: var(--cream);
+  text-align: center;
+  position: relative;
+}
+
+.final-cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-decoration {
+  font-family: 'Caveat', cursive;
+  color: var(--magenta);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.final-cta h2 { margin-bottom: 24px; }
+
+.final-cta p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 36px;
+  opacity: 0.88;
+  line-height: 1.7;
+}
+
+.final-cta .btn-primary {
+  font-size: 1.15rem;
+  padding: 19px 46px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--burgundy);
+  color: var(--pink-soft);
+  padding: 70px 0 32px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 48px;
+}
+
+.footer-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.9rem;
+  font-style: italic;
+  color: var(--pink-cream);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.footer-tagline {
+  font-family: 'Caveat', cursive;
+  color: var(--pink-bright);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.footer-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  opacity: 0.82;
+  max-width: 380px;
+}
+
+.footer-col h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  color: var(--pink-bright);
+  margin-bottom: 18px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--pink-soft);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s;
+  font-size: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.footer-col a:hover { color: var(--pink-cream); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(252, 224, 236, 0.15);
+  padding-top: 26px;
+  text-align: center;
+  font-size: 0.92rem;
+  opacity: 0.7;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .hero-grid, .about-grid, .explainer-grid, .woods-card {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .hero-visual { height: 440px; }
+  
+  .sets-grid, .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid, .merch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-item.tall {
+    grid-row: span 1;
+    aspect-ratio: 1/1;
+  }
+  
+  .merch-banner {
+    grid-template-columns: 1fr;
+  }
+  
+  .merch-banner-image {
+    aspect-ratio: 16/9;
+  }
+  
+  .archive-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+    padding: 36px 28px;
+  }
+  
+  .archive-stamp { margin: 0 auto; }
+  
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  .nav-links { display: none; }
+  
+  .woods-types li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  
+  .explainer-list li strong { min-width: 100px; }
+  
+  section { padding: 80px 0; }
+  
+  .container { padding: 0 24px; }
+  
+  .woods-card { padding: 36px 32px; }
+}
+
+@media (max-width: 540px) {
+  body { font-size: 16px; }
+  .hero { padding: 100px 0 60px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .footer-content { grid-template-columns: 1fr; }
+  .features-grid, .merch-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; }
+  
+  .merch-banner-text { padding: 32px 28px; }
+  .archive-card { padding: 28px 22px; }
+  .woods-card { padding: 28px 22px; }
+  .set-body { padding: 26px 24px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Парящие искорки в фоне (анимация) -->
+<div class="floating-sparkles" aria-hidden="true">
+  <span class="sparkle s-pink s-tiny" style="left: 8%; --dur: 16s; --delay: 0s;"></span>
+  <span class="sparkle s-cream s-small" style="left: 18%; --dur: 13s; --delay: 3s;"></span>
+  <span class="sparkle s-tiny" style="left: 28%; --dur: 18s; --delay: 7s;"></span>
+  <span class="sparkle s-pink s-large" style="left: 42%; --dur: 15s; --delay: 1s;"></span>
+  <span class="sparkle s-cream s-tiny" style="left: 55%; --dur: 17s; --delay: 5s;"></span>
+  <span class="sparkle s-small" style="left: 68%; --dur: 14s; --delay: 9s;"></span>
+  <span class="sparkle s-pink s-tiny" style="left: 78%; --dur: 19s; --delay: 2s;"></span>
+  <span class="sparkle s-cream s-small" style="left: 90%; --dur: 16s; --delay: 6s;"></span>
+  <span class="sparkle s-tiny" style="left: 35%; --dur: 20s; --delay: 11s;"></span>
+  <span class="sparkle s-pink s-small" style="left: 60%; --dur: 17s; --delay: 4s;"></span>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Контур сердца сверху и слева -->
+          <path d="M 51 24 Q 50 30, 47 26 C 41 12, 24 12, 16 22 C 6 34, 8 56, 22 72 L 26 76"
+                fill="none" stroke="#C32B6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Утолщённая полка -->
+          <path d="M 26 78 L 51 78" fill="none" stroke="#C32B6E" stroke-width="6" stroke-linecap="round"/>
+          <!-- Коробка штампа (наклонная) -->
+          <path d="M 22 76 L 32 36 L 40 36 L 36 76 Z" fill="#C32B6E"/>
+          <path d="M 30 50 C 30 48, 32 47, 33 49 C 34 47, 36 48, 36 50 C 36 53, 33 57, 33 57 C 33 57, 30 53, 30 50 Z" fill="#FCE0EC"/>
+          <!-- Книга -->
+          <rect x="40" y="34" width="9" height="42" fill="#C32B6E"/>
+          <rect x="42" y="28" width="5" height="8" fill="#C32B6E"/>
+          <path d="M 42 36 L 44.5 33 L 47 36 Z" fill="#FCE0EC"/>
+          <!-- Буква D -->
+          <path d="M 51 24 L 51 78 L 66 78 C 80 78, 84 64, 84 51 C 84 38, 80 24, 66 24 Z" fill="#C32B6E"/>
+          <path d="M 58 33 L 58 69 L 65 69 C 73 69, 76 60, 76 51 C 76 42, 73 33, 65 33 Z" fill="#FCE0EC"/>
+        </svg>
+      </span>
+      Отпечаток волшебства
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">мастерская</a></li>
+      <li><a href="#sets">наборы</a></li>
+      <li><a href="#process">процесс</a></li>
+      <li><a href="#merch">мерч</a></li>
+      <li><a href="#faq">вопросы</a></li>
+    </ul>
+    <a href="https://t.me/dramionebookclub" class="nav-cta">заказать →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">авторские штампы для ваших книг</div>
+        <h1>Каждая книга — <em>маленький артефакт</em></h1>
+        <p class="hero-text">
+          Именные штампы-экслибрисы с индивидуальным эскизом и авторской деревянной оснасткой из <strong>рябины, виноградной лозы или боярышника</strong> — как сердцевина волшебной палочки. Каждая печать находит своего волшебника.
+        </p>
+        <div class="hero-buttons">
+          <a href="#sets" class="btn-primary">посмотреть наборы →</a>
+          <a href="#about" class="btn-secondary">о мастерской</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo-frame">
+          <video 
+            src="images/hero-video.mp4"
+            poster="images/hero-poster.jpg"
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            preload="metadata"
+            aria-label="Процесс создания оттиска штампа на странице книги">
+            <source src="images/hero-video.mp4" type="video/mp4">
+            <source src="images/hero-video.webm" type="video/webm">
+            <!-- Fallback для браузеров без поддержки video -->
+            <img src="images/hero-poster.jpg" alt="Штамп оставляет оттиск на странице книги">
+          </video>
+          <div class="hero-photo-overlay"></div>
+        </div>
+        <div class="deco-quote" style="bottom: 28px; right: 28px; transform: rotate(-3deg);">~ настоящая магия ~</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Бегущая лента -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">ручная работа</span>
+    <span class="marquee-item">авторские эскизы</span>
+    <span class="marquee-item">7 рабочих дней</span>
+    <span class="marquee-item">доставка СДЭК</span>
+    <span class="marquee-item">оснастки из рябины, лозы и боярышника</span>
+    <span class="marquee-item">каждый штамп уникален</span>
+    <span class="marquee-item">ручная работа</span>
+    <span class="marquee-item">авторские эскизы</span>
+    <span class="marquee-item">7 рабочих дней</span>
+    <span class="marquee-item">доставка СДЭК</span>
+    <span class="marquee-item">оснастки из рябины, лозы и боярышника</span>
+    <span class="marquee-item">каждый штамп уникален</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid reveal-stagger">
+      <div class="about-image">
+        <img src="images/about-stamped-book.jpg" alt="Гарри Поттер с экслибрисом &laquo;Песниченко Екатерина Максимовна&raquo;">
+        <div class="about-image-caption">«затянуть подружку в фандом»</div>
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow" style="justify-content: flex-start; margin-bottom: 12px;">о мастерской</div>
+        <h2 style="text-align: left; margin-bottom: 28px;">Маленькая идея, <em>выросшая в тайный клуб</em></h2>
+        <p>
+          Изначально я задумывала проект, потому что хотела «затянуть» подружку в любимый фандом. Хотелось подарить ей что-то такое, что будет одновременно частью наших книжных вечеров — но останется самостоятельным подарком, даже если ей не зайдёт весь этот фанфиковский движ.
+        </p>
+        <p>
+          Теперь штампы снова доступны — в обновлённом формате. В основе каждого набора — авторская оснастка из дерева, индивидуальное резиновое клише с вашим эскизом и аккуратная коробочка для хранения. Каждая оснастка уникальна — двух одинаковых не существует. Совсем как с волшебной палочкой.
+        </p>
+        <p>
+          Это место для всех, кто относится к своим книгам как к живым существам — и хочет, чтобы каждая из них стала маленьким артефактом.
+        </p>
+        <div class="signature">с любовью, мастерская «Отпечаток волшебства»</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Виньетка-разделитель -->
+<div class="flourish-divider on-blush" aria-hidden="true">
+  <svg viewBox="0 0 320 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 10 20 Q 40 5, 70 20 Q 100 35, 130 20 L 150 20 M 170 20 L 190 20 Q 220 5, 250 20 Q 280 35, 310 20"/>
+    <circle class="center-dot" cx="160" cy="20" r="3"/>
+  </svg>
+</div>
+
+<section class="explainer">
+  <div class="container">
+    <div class="explainer-grid reveal-stagger">
+      <div class="explainer-image">
+        <img src="images/what-is-what.jpg" alt="Объяснение: оснастка, оттиск и клише штампа">
+      </div>
+      <div class="explainer-text">
+        <div class="section-eyebrow">из чего состоит штамп</div>
+        <h2>Три части — <em>одна магия</em></h2>
+        <p>
+          Каждый штамп — маленькая система из трёх элементов. Понимать её устройство необязательно, но полезно, чтобы выбрать своё.
+        </p>
+        <ul class="explainer-list">
+          <li><strong>Оснастка</strong><span>деревянная ручка из мягкой породы — рябины, лозы или боярышника. Каждая уникальна по форме и оттенку.</span></li>
+          <li><strong>Клише</strong><span>резиновая печать с вашим эскизом — гравируется лазером по индивидуальному рисунку.</span></li>
+          <li><strong>Оттиск</strong><span>то, что остаётся на странице вашей книги — тот самый «маленький артефакт».</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sets" id="sets">
+  <div class="container">
+    <div class="section-eyebrow">штампы снова доступны</div>
+    <h2>Два <em>набора</em></h2>
+    <p class="section-intro">
+      Каждый набор — авторский именной штамп ручной работы с индивидуальным резиновым клише и аккуратной коробочкой для хранения. Разница только в том, как вы получите оснастку: выберете сами или довéритесь судьбе.
+    </p>
+    
+    <div class="sets-grid reveal-stagger">
+      <div class="set-card featured">
+        <div class="set-photo">
+          <img src="images/set-1.jpg" alt="Набор №1: штамп с оснасткой на выбор, штемпельная подушка и коробочка для хранения">
+        </div>
+        <div class="set-body">
+          <div class="set-name">Набор № 1</div>
+          <div class="set-tagline">~ оснастка на ваш выбор ~</div>
+          <div class="set-price">3 900 <small>₽</small></div>
+          <ul class="set-includes">
+            <li>Штамп с <strong>индивидуальным резиновым клише</strong> по вашему эскизу</li>
+            <li>Авторская деревянная оснастка <strong>на выбор</strong> — рябина, виноградная лоза или боярышник</li>
+            <li>Коробочка «Magic Stamp» для хранения</li>
+            <li>Штемпельная подушка — розовая или чёрная (выбираете сами)</li>
+          </ul>
+          <a href="https://t.me/dramionebookclub" class="set-cta">заказать №&nbsp;1 →</a>
+        </div>
+      </div>
+
+      <div class="set-card">
+        <div class="set-photo">
+          <img src="images/set-2.jpg" alt="Набор №2: штамп со случайной оснасткой, штемпельная подушка и коробочка для хранения">
+        </div>
+        <div class="set-body">
+          <div class="set-name">Набор № 2</div>
+          <div class="set-tagline">~ оснастка-сюрприз ~</div>
+          <div class="set-price">3 600 <small>₽</small></div>
+          <ul class="set-includes">
+            <li>Штамп с <strong>индивидуальным резиновым клише</strong> по вашему эскизу</li>
+            <li>Авторская деревянная оснастка — <strong>рандомная</strong>, как волшебная палочка, она выбирает вас сама</li>
+            <li>Коробочка «Magic Stamp» для хранения</li>
+            <li>Штемпельная подушка — розовая или чёрная (выбираете сами)</li>
+          </ul>
+          <a href="https://t.me/dramionebookclub" class="set-cta">заказать №&nbsp;2 →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sets-note">~ в обоих наборах эскиз клише разрабатывается индивидуально под вас ~</div>
+  </div>
+</section>
+
+<!-- Виньетка-разделитель -->
+<div class="flourish-divider on-blush" aria-hidden="true">
+  <svg viewBox="0 0 320 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 10 20 Q 40 5, 70 20 Q 100 35, 130 20 L 150 20 M 170 20 L 190 20 Q 220 5, 250 20 Q 280 35, 310 20"/>
+    <circle class="center-dot" cx="160" cy="20" r="3"/>
+  </svg>
+</div>
+
+<section class="woods">
+  <div class="container">
+    <div class="woods-card reveal">
+      <div class="woods-text">
+        <div class="section-eyebrow" style="justify-content: flex-start; color: var(--pink-soft);">
+          <span style="height: 1.5px; width: 50px; background: var(--pink-soft); display: inline-block;"></span>
+          оснастки как волшебные палочки
+        </div>
+        <h2>Три породы — <em>три характера</em></h2>
+        <p>
+          Оснастки сделаны из мягких пород древесины. Названия отсылают к тем самым деревьям, из которых в книжной вселенной делают волшебные палочки.
+        </p>
+        <ul class="woods-types">
+          <li>
+            <span class="name">Рябина</span>
+            <span class="shade">~ светлая ~</span>
+            <span class="core">сердцевина — волос единорога</span>
+          </li>
+          <li>
+            <span class="name">Виноградная лоза</span>
+            <span class="shade">~ средняя ~</span>
+            <span class="core">сердцевина — перо феникса</span>
+          </li>
+          <li>
+            <span class="name">Боярышник</span>
+            <span class="shade">~ тёмная ~</span>
+            <span class="core">сердцевина — сердечная жила дракона</span>
+          </li>
+        </ul>
+        <p style="margin-top: 24px; font-style: italic;">
+          Каждая оснастка уникальна — все проданные различны по цвету и форме. Совсем как настоящие волшебные палочки.
+        </p>
+      </div>
+      <div class="woods-image">
+        <video 
+          src="images/woods-video.mp4"
+          poster="images/woods-poster.jpg"
+          autoplay 
+          loop 
+          muted 
+          playsinline
+          preload="metadata"
+          aria-label="Три деревянные оснастки штампов в руке: светлая рябина, средняя виноградная лоза, тёмный боярышник">
+          <source src="images/woods-video.mp4" type="video/mp4">
+          <source src="images/woods-video.webm" type="video/webm">
+          <img src="images/woods-poster.jpg" alt="Три породы оснасток: рябина, виноградная лоза и боярышник">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-eyebrow">как это работает</div>
+    <h2>Путь от заявки <em>до вашего штампа</em></h2>
+    <p class="section-intro">
+      Каждый штамп делается под конкретный заказ — клише, оснастка, упаковка. Это не конвейер, это маленькая алхимия. Вот как всё происходит.
+    </p>
+
+    <div class="process-grid reveal-stagger">
+      <div class="process-step">
+        <span class="step-number">i.</span>
+        <div class="step-title">Заявка</div>
+        <div class="step-text">Напишите в личные сообщения канала — выберите набор и расскажите, какой эскиз хотите.</div>
+      </div>
+      <div class="process-step">
+        <span class="step-number">ii.</span>
+        <div class="step-title">Эскиз</div>
+        <div class="step-text">Согласуем эскиз клише и цвет штемпельной подушки — розовый или чёрный, на ваш выбор.</div>
+      </div>
+      <div class="process-step">
+        <span class="step-number">iii.</span>
+        <div class="step-title">Создание</div>
+        <div class="step-text">Около 7 рабочих дней. Лазерная гравировка клише, ручная сборка штампа, упаковка.</div>
+      </div>
+      <div class="process-step">
+        <span class="step-number">iv.</span>
+        <div class="step-title">Доставка</div>
+        <div class="step-text">Отправка СДЭК. Оплата при получении. Другие транспортные компании — индивидуально.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="section-eyebrow">почему этот штамп</div>
+    <h2>Маленькие детали, <em>в которых живёт магия</em></h2>
+
+    <div class="features-grid reveal-stagger">
+      <div class="feature">
+        <div class="feature-photo">
+          <img src="images/process-hand.jpg" alt="Деревянная оснастка штампа в руке">
+        </div>
+        <div class="feature-title">Оснастка как палочка</div>
+        <div class="feature-text">Деревянное основание из рябины, виноградной лозы или боярышника. Каждая форма уникальна — двух одинаковых не существует.</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-photo">
+          <img src="images/feature-cliche.jpg" alt="Резиновое клише с гравировкой Хогвартса крупным планом">
+        </div>
+        <div class="feature-title">Эскиз только ваш</div>
+        <div class="feature-text">Резиновое клише разрабатывается индивидуально. Имя, инициалы, любимая цитата, символ или авторский рисунок — что угодно.</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-photo">
+          <img src="images/feature-box.jpg" alt="Розовая коробка с надписью «Magic Stamp» в подарочной упаковке с пупыркой-сердечками">
+        </div>
+        <div class="feature-title">Изящная коробочка</div>
+        <div class="feature-text">Для штампа есть отдельная коробочка с витиеватой надписью «Magic Stamp». В ней удобно хранить и перевозить штамп.</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="18" width="40" height="22" rx="3"/>
+            <path d="M 12 25 L 44 25"/>
+            <ellipse cx="28" cy="32" rx="8" ry="2.5" fill="currentColor" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="feature-title">Подушка по вкусу</div>
+        <div class="feature-text">К каждому штампу — штемпельная подушка на выбор: розовая или чёрная. Можно докупить вторую за доплату.</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="28" cy="28" r="18"/>
+            <path d="M 28 14 L 28 28 L 38 32"/>
+          </svg>
+        </div>
+        <div class="feature-title">7 рабочих дней</div>
+        <div class="feature-text">Срок изготовления — около недели. Если очередь — предупрежу заранее. Никакой массовки: всё делается под конкретный заказ.</div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="20" width="32" height="20" rx="2"/>
+            <path d="M 8 24 L 24 32 L 40 24"/>
+            <path d="M 40 30 L 50 30 M 44 26 L 50 26 M 44 34 L 50 34"/>
+          </svg>
+        </div>
+        <div class="feature-title">Доставка СДЭК</div>
+        <div class="feature-text">Оплата при получении. Другие транспортные компании — обсуждаем индивидуально по вашему запросу.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <div class="section-eyebrow">галерея мастерской</div>
+    <h2>Как это <em>выглядит вживую</em></h2>
+    <p class="section-intro">
+      Несколько кадров из того, что попадало в коробочки наших волшебников за последние месяцы.
+    </p>
+
+    <div class="gallery-grid reveal-stagger">
+      <div class="gallery-item">
+        <img src="images/gallery-1.jpg" alt="Оснастка с лентой и значки">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-2.jpg" alt="Закладка-список чтения и открытка">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-3.jpg" alt="Иллюстрация: штамп, клише и две штемпельные подушки">
+      </div>
+      <div class="gallery-item">
+        <img src="images/gallery-4.jpg" alt="Иллюстрация про штемпельную подушку">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="merch" id="merch">
+  <div class="container">
+    <div class="section-eyebrow">не только штампы</div>
+    <h2>Книжный <em>мерч</em></h2>
+    <p class="section-intro">
+      Стикеры, открытки, значки и закладки — всё то, что раньше входило в боксы, теперь продаётся отдельно. Можно собрать свой набор под себя или дополнить штамп.
+    </p>
+
+    <div class="merch-banner reveal">
+      <div class="merch-banner-text">
+        <div class="merch-banner-eyebrow">~ скоро в мае ~</div>
+        <h3>Дроп тематического мерча — «Библиотека»</h3>
+        <p>Совместная коллекция с <strong style="color: var(--pink-soft);">@suuaal</strong>. Тема — Библиотека: всё про чтение, книжные шкафы и тёплый свет настольной лампы. Точная дата — в канале.</p>
+        <span class="merch-banner-tag">тематический · ограниченная серия</span>
+      </div>
+      <div class="merch-banner-image">
+        <img src="images/merch-library-stamp.jpg" alt="Анонс коллекции «Библиотека»: винтажная марка с раскрытой книгой">
+      </div>
+    </div>
+
+    <div class="merch-grid reveal-stagger">
+      <div class="merch-card">
+        <div class="merch-card-photo">
+          <img src="images/merch-stickers.jpg" alt="Виниловые стикерпаки">
+        </div>
+        <div class="merch-card-body">
+          <div class="merch-card-title">Виниловые стикеры</div>
+          <div class="merch-card-text">Стикерпаки А6 от художниц проекта. Прочный винил, не боится воды.</div>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-card-photo">
+          <img src="images/merch-bookmarks.jpg" alt="Закладка-список чтения и открытка">
+        </div>
+        <div class="merch-card-body">
+          <div class="merch-card-title">Закладки и открытки</div>
+          <div class="merch-card-text">Закладка с таблицей чтения и нежной кисточкой. Сахарные открытки А6 — можно подарить или поставить на полку.</div>
+        </div>
+      </div>
+
+      <div class="merch-card">
+        <div class="merch-card-photo">
+          <img src="images/merch-mix.jpg" alt="Значки, стикеры и оснастка">
+        </div>
+        <div class="merch-card-body">
+          <div class="merch-card-title">Значки и доп. подушки</div>
+          <div class="merch-card-text">Тематические металлические значки и дополнительные штемпельные подушки на любой случай.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="merch-cta">
+      <a href="https://t.me/dramionebookclub">узнать о наличии в канале →</a>
+    </div>
+  </div>
+</section>
+
+<section class="archive">
+  <div class="container">
+    <div class="archive-card reveal">
+      <div class="archive-stamp">
+        <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="45" cy="22" rx="22" ry="9" fill="#FBE9D5" stroke="#9A1F4C" stroke-width="1.8"/>
+          <ellipse cx="45" cy="24" rx="18" ry="6.5" fill="none" stroke="#9A1F4C" stroke-width="0.8" opacity="0.5"/>
+          <rect x="34" y="32" width="22" height="10" fill="#FBE9D5" stroke="#9A1F4C" stroke-width="1.8"/>
+          <rect x="30" y="42" width="30" height="8" rx="2" fill="#FCE0EC" stroke="#9A1F4C" stroke-width="1.8"/>
+          <rect x="32" y="48" width="26" height="5" rx="1" fill="#9A1F4C"/>
+          <g fill="#F4C770">
+            <path d="M 14 14 L 16 18 L 20 20 L 16 22 L 14 26 L 12 22 L 8 20 L 12 18 Z" opacity="0.85"/>
+            <path d="M 76 30 L 78 34 L 82 36 L 78 38 L 76 42 L 74 38 L 70 36 L 74 34 Z" opacity="0.7"/>
+            <path d="M 18 70 L 20 74 L 24 76 L 20 78 L 18 82 L 16 78 L 12 76 L 16 74 Z" opacity="0.8"/>
+          </g>
+        </svg>
+      </div>
+      <div class="archive-text">
+        <div class="archive-eyebrow">~ галерея готовых работ ~</div>
+        <div class="archive-title">Архив печатей</div>
+        <div class="archive-desc">Отдельный канал с примерами оттисков уже готовых штампов — можно посмотреть, как выглядят разные эскизы и оснастки в живую.</div>
+      </div>
+      <a href="https://t.me/arhivpechatei" class="archive-link">смотреть архив →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Виньетка-разделитель -->
+<div class="flourish-divider on-cream" aria-hidden="true">
+  <svg viewBox="0 0 320 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 10 20 Q 40 5, 70 20 Q 100 35, 130 20 L 150 20 M 170 20 L 190 20 Q 220 5, 250 20 Q 280 35, 310 20"/>
+    <circle class="center-dot" cx="160" cy="20" r="3"/>
+  </svg>
+</div>
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-eyebrow">слова волшебников</div>
+    <h2>Что говорят те, <em>кто уже распаковал</em></h2>
+
+    <div class="testimonials-grid reveal-stagger">
+      <div class="testimonial">
+        <p class="testimonial-text">Спасибо вам, любимочки мои!!! Я пищу просто от радости! Каждая книга в моей коллекции теперь похожа на артефакт из мира волшебников — оснастка просто фантастическая.</p>
+        <div class="testimonial-author">Екатерина</div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial-text">Я в восторге! Это очень неожиданно и приятно. Всё супер продумано — от эскиза клише до коробочки для хранения. Эскиз получился именно таким, как я хотела.</p>
+        <div class="testimonial-author">Алина</div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial-text">Заказывала штамп подруге на день рождения. Эскиз получился очень нежным, оснастка из лозы — просто мечта. Подруга теперь штампует все свои книги.</p>
+        <div class="testimonial-author">Маша</div>
+      </div>
+
+      <div class="testimonial">
+        <p class="testimonial-text">Я не из фандома, но эстетика канала меня покорила. Заказала штамп с экслибрисом по своим инициалам — получила маленькое произведение искусства. Все книги в моей библиотеке теперь отмечены этим прекрасным штампом.</p>
+        <div class="testimonial-author">София</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-eyebrow">часто спрашивают</div>
+    <h2>Вопросы и <em>волшебные ответы</em></h2>
+
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary class="faq-question">В чём разница между набором № 1 и № 2?</summary>
+        <div class="faq-answer">Содержимое одинаковое: штамп с индивидуальным резиновым клише, коробочка для штампа и штемпельная подушка. Разница только в оснастке. В наборе № 1 (3900 ₽) вы выбираете оснастку сами — рябина, виноградная лоза или боярышник. В наборе № 2 (3600 ₽) оснастка случайная — как волшебная палочка, она сама вас выбирает.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Сколько ждать заказ?</summary>
+        <div class="faq-answer">Около 7 рабочих дней. При наличии очереди срок может увеличиваться — об этом я предупреждаю заранее. После изготовления штамп отправляется СДЭК.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Где можно посмотреть готовые работы?</summary>
+        <div class="faq-answer">В отдельном канале-архиве: <a href="https://t.me/arhivpechatei">@arhivpechatei</a>. Там собраны примеры оттисков уже готовых штампов — удобно посмотреть, как разные эскизы и оснастки выглядят вживую.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Из какого дерева делается оснастка?</summary>
+        <div class="faq-answer">Используются три породы: рябина (светлая), виноградная лоза (средняя) и боярышник (тёмная) — отсылка к сердцевинам волшебных палочек. Форма каждой оснастки уникальна. В наборе № 1 — на ваш выбор, в наборе № 2 — случайная.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Какого цвета будет штемпельная подушка?</summary>
+        <div class="faq-answer">Розовая или чёрная — вы выбираете самостоятельно. Можно сразу добавить в заказ ещё одну подушку за дополнительную стоимость. У подушек достаточно большой ресурс, но если вдруг ваша станет непригодной — напишите при следующем заказе, я положу любую подушку бесплатно.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Можно ли разработать свой эскиз клише?</summary>
+        <div class="faq-answer">Да, эскиз клише в обоих наборах разрабатывается индивидуально под вас. Это может быть имя, инициалы, монограмма, цитата или собственный символ — обсудим всё в личной переписке.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Как ухаживать за штампом?</summary>
+        <div class="faq-answer">Основной уход — удаление пыли с поверхности оснастки. Используйте только слегка влажную ткань без ворса. Недопустимо опускать оснастку в воду или раствор на водной основе — это может деформировать дерево. При необходимости протирайте клише влажной салфеткой. Полная карточка по уходу прилагается к каждому заказу.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Как происходит оплата?</summary>
+        <div class="faq-answer">Оплата при получении посылки в СДЭК. Если хотите воспользоваться другой транспортной компанией — напишите в лс канала, обсудим индивидуально.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">А мерч (стикеры, открытки, значки) — он входит в набор?</summary>
+        <div class="faq-answer">Нет, мерч продаётся отдельно. Сейчас доступны остатки прошлой коллекции, в мае выходит тематическая коллекция «Библиотека» совместно с @suuaal. Подробности и наличие — в канале <a href="https://t.me/dramionebookclub">@dramionebookclub</a>.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">А если я не из фандома Драмионы?</summary>
+        <div class="faq-answer">Это место для всех, кто любит свои книги. Драмиона — то, с чего проект начался, и до сих пор большая часть нашей семьи. Но штампы-экслибрисы универсальны: с вашим именем, инициалами или личным символом они подойдут любой библиотеке.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner reveal">
+      <div class="cta-decoration">~ готовы начать приключение? ~</div>
+      <h2>Закажите штамп — и пусть каждая ваша книга станет <em>маленьким артефактом</em></h2>
+      <p>Заказы оформляются в личных сообщениях канала. Я свяжусь с вами в течение суток, обсудим эскиз, оснастку и сроки.</p>
+      <a href="https://t.me/dramionebookclub" class="btn-primary">написать в канал →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">Отпечаток волшебства</div>
+        <div class="footer-tagline">~ штампы и книжный мерч ~</div>
+        <p class="footer-desc">Авторская мастерская именных штампов-экслибрисов для тех, кто любит свои книги. Доставка по всей России.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <a href="#about">О мастерской</a>
+        <a href="#sets">Наборы</a>
+        <a href="#process">Как заказать</a>
+        <a href="#merch">Мерч</a>
+        <a href="#faq">Вопросы</a>
+      </div>
+      <div class="footer-col">
+        <h4>Связь</h4>
+        <a href="https://t.me/dramionebookclub">Канал · заказ в лс</a>
+        <a href="https://t.me/arhivpechatei">Архив печатей</a>
+        <a href="https://t.me/boypravbox">Личный контакт</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Отпечаток волшебства · сделано с любовью к книгам
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   1. REVEAL ON SCROLL (IntersectionObserver)
+   Добавляет класс is-visible когда элемент входит во вьюпорт
+   ════════════════════════════════════════════════════════════════ */
+(function() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    // Сразу делаем всё видимым
+    document.querySelectorAll('.reveal, .reveal-stagger, .reveal-fade, .flourish-divider').forEach(el => {
+      el.classList.add('is-visible');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  document.querySelectorAll('.reveal, .reveal-stagger, .reveal-fade, .flourish-divider').forEach(el => {
+    observer.observe(el);
+  });
+})();
+
+/* ════════════════════════════════════════════════════════════════
+   2. PARALLAX HERO
+   Обновляет CSS variable --scroll-y на body, CSS использует это для смещения
+   ════════════════════════════════════════════════════════════════ */
+(function() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  // Только на десктопе с достаточной мощностью
+  if (window.innerWidth < 768) return;
+
+  let ticking = false;
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  function updateParallax() {
+    const scrollY = window.scrollY;
+    // Применяем только в пределах hero, дальше не нужно
+    if (scrollY < hero.offsetHeight + 100) {
+      document.body.style.setProperty('--scroll-y', scrollY);
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
+/* ════════════════════════════════════════════════════════════════
+   3. КУРСОРНЫЙ СЛЕД (только desktop, без touch)
+   ════════════════════════════════════════════════════════════════ */
+(function() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  // Не запускаем на тач-устройствах
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) return;
+  if (window.innerWidth < 960) return;
+
+  let lastTrailTime = 0;
+  const TRAIL_INTERVAL = 80; // ms между искорками — чтобы не было слишком густо
+
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    if (now - lastTrailTime < TRAIL_INTERVAL) return;
+    lastTrailTime = now;
+
+    const trail = document.createElement('div');
+    trail.className = 'cursor-trail';
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    // Лёгкая случайность для естественности
+    const offsetX = (Math.random() - 0.5) * 14;
+    const offsetY = (Math.random() - 0.5) * 14;
+    trail.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`;
+
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 800);
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>

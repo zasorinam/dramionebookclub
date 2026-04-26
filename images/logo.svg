@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="500" height="500">
+  <title>Отпечаток волшебства · логотип</title>
+  <!-- Контур сердца -->
+  <path d="M 51 24 Q 50 30, 47 26 C 41 12, 24 12, 16 22 C 6 34, 8 56, 22 72 L 26 76"
+        fill="none" stroke="#C32B6E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Полка -->
+  <path d="M 26 78 L 51 78" fill="none" stroke="#C32B6E" stroke-width="6" stroke-linecap="round"/>
+  <!-- Коробка штампа -->
+  <path d="M 22 76 L 32 36 L 40 36 L 36 76 Z" fill="#C32B6E"/>
+  <path d="M 30 50 C 30 48, 32 47, 33 49 C 34 47, 36 48, 36 50 C 36 53, 33 57, 33 57 C 33 57, 30 53, 30 50 Z" fill="#FCE0EC"/>
+  <!-- Книга -->
+  <rect x="40" y="34" width="9" height="42" fill="#C32B6E"/>
+  <rect x="42" y="28" width="5" height="8" fill="#C32B6E"/>
+  <path d="M 42 36 L 44.5 33 L 47 36 Z" fill="#FCE0EC"/>
+  <!-- Буква D -->
+  <path d="M 51 24 L 51 78 L 66 78 C 80 78, 84 64, 84 51 C 84 38, 80 24, 66 24 Z" fill="#C32B6E"/>
+  <path d="M 58 33 L 58 69 L 65 69 C 73 69, 76 60, 76 51 C 76 42, 73 33, 65 33 Z" fill="#FCE0EC"/>
+</svg>

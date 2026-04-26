@@ -1,0 +1,521 @@
+/* ════════════════════════════════════════════════════════════════
+   ANIMATIONS.CSS · «Отпечаток волшебства»
+   Файл с анимациями. Чтобы временно отключить — просто закомментируй
+   строку <link rel="stylesheet" href="animations.css"> в index.html
+   ════════════════════════════════════════════════════════════════ */
+
+/* ────────────── Респект к accessibility ──────────────
+   Если у пользователя в системе включено «уменьшить движение» —
+   выключаем все анимации */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .floating-sparkles, .cursor-trail, .marquee {
+    display: none !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   1. ПЛАВАЮЩИЕ ИСКОРКИ В ФОНЕ
+   Контейнер фиксированный, искорки медленно дрейфуют вверх и тают.
+   ════════════════════════════════════════════════════════════════ */
+.floating-sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0 L8.5 5.5 L14 7 L8.5 8.5 L7 14 L5.5 8.5 L0 7 L5.5 5.5 Z' fill='%23F4C770' opacity='0.85'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: float-up var(--dur, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.sparkle.s-pink {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0 L8.5 5.5 L14 7 L8.5 8.5 L7 14 L5.5 8.5 L0 7 L5.5 5.5 Z' fill='%23F8C8DC' opacity='0.9'/%3E%3C/svg%3E");
+}
+
+.sparkle.s-cream {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0 L8.5 5.5 L14 7 L8.5 8.5 L7 14 L5.5 8.5 L0 7 L5.5 5.5 Z' fill='%23FBE9D5' opacity='0.95'/%3E%3C/svg%3E");
+}
+
+.sparkle.s-tiny  { width: 8px;  height: 8px; }
+.sparkle.s-small { width: 10px; height: 10px; }
+.sparkle.s-large { width: 18px; height: 18px; }
+
+@keyframes float-up {
+  0% {
+    transform: translateY(110vh) rotate(0deg) scale(0.4);
+    opacity: 0;
+  }
+  10% { opacity: 0.85; transform: translateY(95vh) rotate(45deg) scale(1); }
+  50% { transform: translateY(50vh) translateX(20px) rotate(180deg) scale(1.1); opacity: 1; }
+  90% { opacity: 0.7; }
+  100% {
+    transform: translateY(-15vh) translateX(-10px) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   2. REVEAL ON SCROLL
+   Элементы плавно появляются снизу-вверх когда видны во вьюпорте.
+   Класс .reveal накидывается через JS на нужные элементы.
+   ════════════════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger для соседних элементов (карточки, фичи) */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.18s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.31s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.44s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.57s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.7s; }
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Лёгкое появление картинок (без сдвига, только fade) */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   3. КУРСОРНЫЙ СЛЕД (только десктоп)
+   Маленькие искорки тянутся за курсором
+   ════════════════════════════════════════════════════════════════ */
+.cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 12px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 0 L7 5 L12 6 L7 7 L6 12 L5 7 L0 6 L5 5 Z' fill='%23F4C770'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  animation: trail-fade 0.8s ease-out forwards;
+}
+
+@keyframes trail-fade {
+  0% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3) rotate(180deg);
+  }
+}
+
+/* На мобильных и тач-устройствах — выключаем */
+@media (hover: none), (pointer: coarse), (max-width: 960px) {
+  .cursor-trail { display: none !important; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   4. УЛУЧШЕННЫЙ HOVER НА НАБОРАХ
+   Золотистое свечение + парящие искорки при наведении
+   ════════════════════════════════════════════════════════════════ */
+.set-card {
+  position: relative;
+}
+
+/* Золотистое свечение по периметру через box-shadow вместо ::before
+   (избегаем проблем с z-index и overflow:hidden) */
+.set-card {
+  transition: box-shadow 0.5s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
+}
+
+.set-card:hover {
+  box-shadow:
+    0 36px 70px rgba(154, 31, 76, 0.2),
+    0 0 0 2px rgba(244, 199, 112, 0.5),
+    0 0 30px rgba(244, 199, 112, 0.35);
+  animation: card-glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes card-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 36px 70px rgba(154, 31, 76, 0.2),
+      0 0 0 2px rgba(244, 199, 112, 0.5),
+      0 0 30px rgba(244, 199, 112, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 36px 70px rgba(154, 31, 76, 0.2),
+      0 0 0 2px rgba(244, 199, 112, 0.7),
+      0 0 50px rgba(244, 199, 112, 0.55);
+  }
+}
+
+.set-card::after {
+  content: '✦  ✦  ✧';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold-glow);
+  font-size: 1rem;
+  letter-spacing: 12px;
+  opacity: 0;
+  pointer-events: none;
+  text-shadow: 0 0 8px rgba(244, 199, 112, 0.6);
+  transition: opacity 0.5s ease;
+  z-index: 5;
+}
+
+.set-card:hover::after {
+  opacity: 1;
+  animation: tiny-twinkle 2s ease-in-out infinite;
+}
+
+@keyframes tiny-twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Кнопки в карточках наборов — тонкое мерцание иконки на hover */
+.set-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.set-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 244, 248, 0.25), transparent);
+  transition: left 0.6s ease;
+}
+
+.set-cta:hover::after {
+  left: 130%;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   5. МЕРЦАНИЕ БУКВИЦЫ В ABOUT
+   ════════════════════════════════════════════════════════════════ */
+.about-text p:first-of-type::first-letter {
+  background: linear-gradient(135deg, #C32B6E 0%, #E91E84 50%, #C32B6E 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: letter-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes letter-shimmer {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   6. ПАРАЛЛАКС НА HERO
+   Фото в hero сдвигается медленнее текста при скролле.
+   Реализация на CSS variable, которую обновляет JS.
+   ════════════════════════════════════════════════════════════════ */
+.hero-photo-frame {
+  transform: translateY(calc(var(--scroll-y, 0) * 0.15px));
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+
+.hero-content {
+  transform: translateY(calc(var(--scroll-y, 0) * -0.05px));
+  transition: transform 0.05s linear;
+}
+
+/* Подпись на hero чуть-чуть качается */
+.deco-quote {
+  animation: gentle-sway 6s ease-in-out infinite;
+}
+
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(-1deg) translateY(-4px); }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   7. БЕГУЩАЯ ЛЕНТА
+   Бесконечная горизонтальная лента под hero и в конце страницы.
+   ════════════════════════════════════════════════════════════════ */
+.marquee {
+  background: var(--burgundy);
+  color: var(--pink-soft);
+  overflow: hidden;
+  padding: 14px 0;
+  border-top: 1px solid rgba(248, 200, 220, 0.15);
+  border-bottom: 1px solid rgba(248, 200, 220, 0.15);
+  position: relative;
+  z-index: 4;
+}
+
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: marquee-scroll 38s linear infinite;
+}
+
+.marquee-item {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  padding: 0 28px;
+  color: var(--pink-soft);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.marquee-item::after {
+  content: '✦';
+  color: var(--gold-glow);
+  font-size: 0.9rem;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   8. АНИМИРОВАННЫЕ ВИНЬЕТКИ-РАЗДЕЛИТЕЛИ
+   Тонкий росчерк рисуется когда секция входит в зону видимости
+   ════════════════════════════════════════════════════════════════ */
+.flourish-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  background: var(--pink-blush);
+  position: relative;
+  z-index: 4;
+}
+
+.flourish-divider svg {
+  width: clamp(180px, 30vw, 320px);
+  height: auto;
+  display: block;
+}
+
+.flourish-divider path {
+  fill: none;
+  stroke: var(--magenta);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  opacity: 0.7;
+}
+
+.flourish-divider.is-visible path {
+  animation: draw-line 2.4s cubic-bezier(0.5, 0, 0.2, 1) forwards;
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+.flourish-divider .center-dot {
+  fill: var(--magenta);
+  opacity: 0;
+}
+
+.flourish-divider.is-visible .center-dot {
+  animation: dot-appear 0.5s ease 1.8s forwards;
+}
+
+@keyframes dot-appear {
+  to { opacity: 0.8; }
+}
+
+/* На светло-кремовом фоне — другой цвет фона у разделителя */
+.flourish-divider.on-cream { background: var(--cream); }
+.flourish-divider.on-blush { background: var(--pink-blush); }
+
+/* ════════════════════════════════════════════════════════════════
+   9. ПУЛЬСИРУЮЩЕЕ СВЕЧЕНИЕ ФИНАЛЬНОЙ CTA-КНОПКИ
+   Главная кнопка «написать в канал» в финальном блоке
+   ════════════════════════════════════════════════════════════════ */
+.final-cta .btn-primary {
+  position: relative;
+  animation: cta-pulse 3s ease-in-out infinite;
+}
+
+@keyframes cta-pulse {
+  0%, 100% {
+    box-shadow:
+      0 6px 24px rgba(154, 31, 76, 0.25),
+      0 0 0 0 rgba(244, 199, 112, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 10px 32px rgba(154, 31, 76, 0.35),
+      0 0 0 14px rgba(244, 199, 112, 0);
+  }
+}
+
+.final-cta .btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, transparent, rgba(244, 199, 112, 0.4), transparent);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.final-cta .btn-primary:hover::before {
+  opacity: 1;
+  animation: shine-rotate 2s linear infinite;
+}
+
+@keyframes shine-rotate {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+/* Пауза анимации на hover, чтобы не отвлекало */
+.final-cta .btn-primary:hover {
+  animation-play-state: paused;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   ДОПОЛНИТЕЛЬНЫЕ ЛЁГКИЕ ЭФФЕКТЫ
+   ════════════════════════════════════════════════════════════════ */
+
+/* Кнопка в навигации — лёгкое смещение блика на hover */
+.nav-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 244, 248, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-cta:hover::before { left: 130%; }
+
+/* Логотип — лёгкое покачивание сердца на hover */
+.logo:hover .logo-mark svg path {
+  animation: heart-beat 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.08); }
+  50% { transform: scale(1); }
+  70% { transform: scale(1.04); }
+}
+
+/* Карточки фич — иконка чуть всплывает на hover */
+.feature:hover .feature-icon {
+  animation: icon-pop 0.6s ease;
+}
+
+@keyframes icon-pop {
+  0% { transform: translateY(0) rotate(0deg); }
+  40% { transform: translateY(-6px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Секция отзывов — кавычка на каждом отзыве слегка качается */
+.testimonial::before {
+  animation: quote-sway 5s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
+@keyframes quote-sway {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-2px); }
+}
+
+/* FAQ — иконка плюса слегка вращается при hover */
+.faq-question:hover::after {
+  animation: plus-spin 0.5s ease;
+}
+
+@keyframes plus-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
+}
+
+details[open] .faq-question:hover::after {
+  animation: plus-spin-back 0.5s ease;
+}
+
+@keyframes plus-spin-back {
+  0% { transform: rotate(45deg); }
+  100% { transform: rotate(225deg); }
+}
+
+/* Архивный штамп слегка покачивается */
+.archive-stamp svg {
+  animation: stamp-tilt 8s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes stamp-tilt {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Hover на галерее — ярче эффект */
+.gallery-item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-item:hover {
+  filter: brightness(1.05) saturate(1.1);
+}
