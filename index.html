@@ -29,7 +29,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 
 body {
   font-family: 'Cormorant Garamond', serif;
@@ -38,7 +38,10 @@ body {
   font-size: 18px;
   line-height: 1.65;
   overflow-x: hidden;
-  background-image: 
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
+  background-image:
     radial-gradient(ellipse 80% 50% at 20% 0%, rgba(233, 30, 132, 0.08) 0%, transparent 50%),
     radial-gradient(ellipse 60% 40% at 80% 100%, rgba(195, 43, 110, 0.1) 0%, transparent 50%);
   background-attachment: fixed;
@@ -1665,7 +1668,7 @@ footer {
 
 @media (max-width: 540px) {
   body { font-size: 16px; }
-  .hero { padding: 100px 0 60px; }
+  .hero { padding: 130px 0 60px; }
   .process-grid { grid-template-columns: 1fr; }
   .footer-content { grid-template-columns: 1fr; }
   .features-grid, .merch-grid { grid-template-columns: 1fr; }
@@ -1727,7 +1730,7 @@ footer {
       <li><a href="#merch">мерч</a></li>
       <li><a href="#faq">вопросы</a></li>
     </ul>
-    <a href="https://t.me/dramionebookclub" class="nav-cta">заказать →</a>
+    <a href="https://t.me/dramionebookclub" class="nav-cta">заказать&nbsp;→</a>
   </div>
 </nav>
 
@@ -1741,7 +1744,7 @@ footer {
           Именные штампы-экслибрисы с индивидуальным эскизом и авторской деревянной оснасткой из <strong>рябины, виноградной лозы или боярышника</strong> — как сердцевина волшебной палочки. Каждая печать находит своего волшебника.
         </p>
         <div class="hero-buttons">
-          <a href="#sets" class="btn-primary">посмотреть наборы →</a>
+          <a href="#sets" class="btn-primary">посмотреть наборы&nbsp;→</a>
           <a href="#about" class="btn-secondary">о мастерской</a>
         </div>
       </div>
@@ -1866,7 +1869,7 @@ footer {
             <li>Коробочка «Magic Stamp» для хранения</li>
             <li>Штемпельная подушка — розовая или чёрная (выбираете сами)</li>
           </ul>
-          <a href="https://t.me/dramionebookclub" class="set-cta">заказать №&nbsp;1 →</a>
+          <a href="https://t.me/dramionebookclub" class="set-cta">заказать №&nbsp;1&nbsp;→</a>
         </div>
       </div>
 
@@ -1884,7 +1887,7 @@ footer {
             <li>Коробочка «Magic Stamp» для хранения</li>
             <li>Штемпельная подушка — розовая или чёрная (выбираете сами)</li>
           </ul>
-          <a href="https://t.me/dramionebookclub" class="set-cta">заказать №&nbsp;2 →</a>
+          <a href="https://t.me/dramionebookclub" class="set-cta">заказать №&nbsp;2&nbsp;→</a>
         </div>
       </div>
     </div>
@@ -2132,7 +2135,7 @@ footer {
     </div>
 
     <div class="merch-cta">
-      <a href="https://t.me/dramionebookclub">узнать о наличии в канале →</a>
+      <a href="https://t.me/dramionebookclub">узнать о наличии в канале&nbsp;→</a>
     </div>
   </div>
 </section>
@@ -2159,7 +2162,7 @@ footer {
         <div class="archive-title">Архив печатей</div>
         <div class="archive-desc">Отдельный канал с примерами оттисков уже готовых штампов — можно посмотреть, как выглядят разные эскизы и оснастки в живую.</div>
       </div>
-      <a href="https://t.me/arhivpechatei" class="archive-link">смотреть архив →</a>
+      <a href="https://t.me/arhivpechatei" class="archive-link">смотреть архив&nbsp;→</a>
     </div>
   </div>
 </section>
@@ -2282,7 +2285,7 @@ footer {
       <div class="cta-decoration">~ готовы начать приключение? ~</div>
       <h2>Закажите штамп — и пусть каждая ваша книга станет <em>маленьким артефактом</em></h2>
       <p>Заказы оформляются в личных сообщениях канала. Я свяжусь с вами в течение суток, обсудим эскиз, оснастку и сроки.</p>
-      <a href="https://t.me/dramionebookclub" class="btn-primary">написать в канал →</a>
+      <a href="https://t.me/dramionebookclub" class="btn-primary">написать в канал&nbsp;→</a>
     </div>
   </div>
 </section>
