@@ -202,7 +202,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 14px;
-  animation: fadeUp 1s ease;
 }
 
 .hero-eyebrow::before {
@@ -220,7 +219,6 @@ h1 {
   color: var(--burgundy);
   letter-spacing: -0.025em;
   margin-bottom: 30px;
-  animation: fadeUp 1s ease 0.1s backwards;
 }
 
 h1 em {
@@ -251,7 +249,6 @@ h1 em::after {
   color: var(--ink);
   margin-bottom: 38px;
   max-width: 540px;
-  animation: fadeUp 1s ease 0.2s backwards;
 }
 
 .hero-text strong {
@@ -263,7 +260,6 @@ h1 em::after {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-  animation: fadeUp 1s ease 0.3s backwards;
 }
 
 .btn-primary {
@@ -310,7 +306,6 @@ h1 em::after {
 .hero-visual {
   position: relative;
   height: 580px;
-  animation: fadeUp 1.2s ease 0.4s backwards;
 }
 
 .hero-photo-frame {
@@ -337,11 +332,6 @@ h1 em::after {
   inset: 0;
   background: linear-gradient(135deg, rgba(154, 31, 76, 0.15) 0%, transparent 40%, rgba(195, 43, 110, 0.18) 100%);
   pointer-events: none;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .deco-quote {
