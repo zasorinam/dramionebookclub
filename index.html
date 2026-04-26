@@ -1310,7 +1310,7 @@ h2 em {
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 26px;
   margin-top: 50px;
   position: relative;
   z-index: 2;
@@ -1318,23 +1318,80 @@ h2 em {
 
 .testimonial {
   background: rgba(252, 224, 236, 0.08);
-  padding: 42px 38px;
+  padding: 0 32px 32px;
   border-radius: 20px;
   border: 1px solid rgba(252, 224, 236, 0.15);
   position: relative;
   backdrop-filter: blur(10px);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
+a.testimonial:hover {
+  background: rgba(252, 224, 236, 0.13);
+  border-color: rgba(252, 224, 236, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+a.testimonial:hover .testimonial-link-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.testimonial-link-icon {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--pink-soft);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.testimonial-photo {
+  margin: 0 -32px 28px;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px 20px 0 0;
+}
+
+.testimonial-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.testimonial-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(141, 26, 79, 0) 60%, rgba(141, 26, 79, 0.45) 100%);
+  pointer-events: none;
+}
+
+a.testimonial:hover .testimonial-photo img { transform: scale(1.06); }
 
 .testimonial::before {
   content: '"';
   position: absolute;
-  top: -28px;
+  top: 232px;
   left: 28px;
   font-family: 'Fraunces', serif;
   font-size: 7rem;
   color: var(--pink-bright);
   line-height: 1;
   font-style: italic;
+  z-index: 3;
 }
 
 .testimonial-text {
@@ -2034,7 +2091,7 @@ footer {
       <div class="merch-banner-text">
         <div class="merch-banner-eyebrow">~ скоро в мае ~</div>
         <h3>Дроп тематического мерча — «Библиотека»</h3>
-        <p>Совместная коллекция с <strong style="color: var(--pink-soft);">@suuaal</strong>. Тема — Библиотека: всё про чтение, книжные шкафы и тёплый свет настольной лампы. Точная дата — в канале.</p>
+        <p>Совместная коллекция с <a href="https://t.me/suuaal" target="_blank" rel="noopener" style="color: var(--pink-soft); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(248, 200, 220, 0.4); transition: text-decoration-color 0.2s;" onmouseover="this.style.textDecorationColor='var(--pink-soft)'" onmouseout="this.style.textDecorationColor='rgba(248, 200, 220, 0.4)'">@suuaal</a>. Тема — Библиотека: всё про чтение, книжные шкафы и тёплый свет настольной лампы. Точная дата — в канале.</p>
         <span class="merch-banner-tag">тематический · ограниченная серия</span>
       </div>
       <div class="merch-banner-image">
@@ -2121,25 +2178,41 @@ footer {
     <h2>Что говорят те, <em>кто уже распаковал</em></h2>
 
     <div class="testimonials-grid reveal-stagger">
-      <div class="testimonial">
-        <p class="testimonial-text">Спасибо вам, любимочки мои!!! Я пищу просто от радости! Каждая книга в моей коллекции теперь похожа на артефакт из мира волшебников — оснастка просто фантастическая.</p>
-        <div class="testimonial-author">Екатерина</div>
-      </div>
+      <a href="https://t.me/dramionebookclub/491" target="_blank" rel="noopener" class="testimonial">
+        <svg class="testimonial-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17 L17 7 M9 7 L17 7 L17 15"/>
+        </svg>
+        <div class="testimonial-photo"><img src="images/testimonial-1.jpg" alt="Отзыв Кати: распакованный бокс" loading="lazy"></div>
+        <p class="testimonial-text">Посылку вчера получила, спасибо вам огромное ❤️❤️❤️ Красота невероятная ✨✨✨</p>
+        <div class="testimonial-author">Катя</div>
+      </a>
 
-      <div class="testimonial">
-        <p class="testimonial-text">Я в восторге! Это очень неожиданно и приятно. Всё супер продумано — от эскиза клише до коробочки для хранения. Эскиз получился именно таким, как я хотела.</p>
-        <div class="testimonial-author">Алина</div>
-      </div>
+      <a href="https://t.me/dramionebookclub/485" target="_blank" rel="noopener" class="testimonial">
+        <svg class="testimonial-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17 L17 7 M9 7 L17 7 L17 15"/>
+        </svg>
+        <div class="testimonial-photo"><img src="images/testimonial-2.jpg" alt="Отзыв Juli Lunny: подарок получен" loading="lazy"></div>
+        <p class="testimonial-text">Доброе утро! Мы наконец-то подарили подарочек! Спасибо ещё раз вам большое за оперативность и эмоции 🐰</p>
+        <div class="testimonial-author">Juli Lunny</div>
+      </a>
 
-      <div class="testimonial">
-        <p class="testimonial-text">Заказывала штамп подруге на день рождения. Эскиз получился очень нежным, оснастка из лозы — просто мечта. Подруга теперь штампует все свои книги.</p>
-        <div class="testimonial-author">Маша</div>
-      </div>
+      <a href="https://t.me/dramionebookclub/471" target="_blank" rel="noopener" class="testimonial">
+        <svg class="testimonial-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17 L17 7 M9 7 L17 7 L17 15"/>
+        </svg>
+        <div class="testimonial-photo"><img src="images/testimonial-3.jpg" alt="Отзыв Софьи: содержимое бокса" loading="lazy"></div>
+        <p class="testimonial-text">Добрый вечер! Я получила бокс 🥰 Спасибо вам огромное 💕</p>
+        <div class="testimonial-author">Софья Павлова</div>
+      </a>
 
-      <div class="testimonial">
-        <p class="testimonial-text">Я не из фандома, но эстетика канала меня покорила. Заказала штамп с экслибрисом по своим инициалам — получила маленькое произведение искусства. Все книги в моей библиотеке теперь отмечены этим прекрасным штампом.</p>
-        <div class="testimonial-author">София</div>
-      </div>
+      <a href="https://t.me/dramionebookclub/452" target="_blank" rel="noopener" class="testimonial">
+        <svg class="testimonial-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17 L17 7 M9 7 L17 7 L17 15"/>
+        </svg>
+        <div class="testimonial-photo"><img src="images/testimonial-4.jpg" alt="Отзыв Юли: главный член семьи и розовая коробка" loading="lazy"></div>
+        <p class="testimonial-text">Большое спасибо, забрала! Главный член семьи остался доволен)</p>
+        <div class="testimonial-author">Юля</div>
+      </a>
     </div>
   </div>
 </section>
@@ -2192,7 +2265,7 @@ footer {
 
       <details class="faq-item">
         <summary class="faq-question">А мерч (стикеры, открытки, значки) — он входит в набор?</summary>
-        <div class="faq-answer">Нет, мерч продаётся отдельно. Сейчас доступны остатки прошлой коллекции, в мае выходит тематическая коллекция «Библиотека» совместно с @suuaal. Подробности и наличие — в канале <a href="https://t.me/dramionebookclub">@dramionebookclub</a>.</div>
+        <div class="faq-answer">Нет, мерч продаётся отдельно. Сейчас доступны остатки прошлой коллекции, в мае выходит тематическая коллекция «Библиотека» совместно с <a href="https://t.me/suuaal" target="_blank" rel="noopener">@suuaal</a>. Подробности и наличие — в канале <a href="https://t.me/dramionebookclub">@dramionebookclub</a>.</div>
       </details>
 
       <details class="faq-item">
